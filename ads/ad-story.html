@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Ad — Story 1080x1920</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700;800;900&family=Rubik:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{font-family:"Heebo",sans-serif;color:#f8f0ff;background:#0a0210;position:relative}
+body::before{
+  content:"";position:absolute;inset:0;opacity:.26;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  z-index:3;pointer-events:none
+}
+.hero{position:absolute;inset:0 0 auto 0;height:1180px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 6%}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,2,16,.45) 0%,transparent 16%,transparent 72%,#0a0210 99%)}
+
+.top{position:absolute;top:48px;left:48px;z-index:4;display:flex;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:999px;
+  font-size:19px;font-weight:800;color:#ffd9ec;background:rgba(255,62,165,.16);
+  border:1px solid rgba(255,62,165,.45);backdrop-filter:blur(8px)}
+.badge i{width:10px;height:10px;border-radius:50%;background:#ff3ea5;box-shadow:0 0 16px #ff3ea5}
+.top .mark{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:30px;
+  background:rgba(10,2,16,.55);border:1px solid rgba(247,201,72,.45);color:#f7c948;backdrop-filter:blur(8px)}
+
+.panel{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:0 58px 54px;
+  background:linear-gradient(180deg,rgba(10,2,16,0),#0a0210 12%)}
+h1{font-family:"Rubik";font-weight:900;font-size:78px;line-height:1;letter-spacing:-2.6px;margin:14px 0 12px;color:#fff}
+h1 em{font-style:normal;display:block;
+  background:linear-gradient(180deg,#fff6d0 2%,#f7c948 48%,#a9761f 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 16px 36px rgba(247,201,72,.22))}
+.lead{font-size:27px;line-height:1.4;color:#eadcf6;font-weight:600;margin:0 0 20px}
+.lead b{color:#fff;font-weight:900}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.chips span{font-size:18px;font-weight:700;padding:9px 15px;border-radius:999px;
+  background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.15)}
+.cta{display:flex;align-items:center;justify-content:center;gap:14px;height:92px;border-radius:999px;
+  font-size:31px;font-weight:900;color:#04220f;
+  background:linear-gradient(180deg,#35e878,#14a548);
+  box-shadow:0 20px 50px rgba(37,211,102,.45), inset 0 2px 0 rgba(255,255,255,.45)}
+.cta svg{width:34px;height:34px}
+.foot{display:flex;align-items:center;gap:16px;margin-top:20px}
+.qrBox{background:#fff;padding:9px;border-radius:16px}
+.qrBox img{display:block;width:104px;height:104px}
+.foot .t{font-size:17px;color:#c3afd6;line-height:1.4}
+.foot .t b{display:block;color:#fff;font-size:20px}
+.foot .url{font-family:"Rubik";font-size:15px;color:#a98cc6;direction:ltr;text-align:right;margin-top:4px}
+.star{position:absolute;z-index:2;color:#f7c948;opacity:.85;filter:drop-shadow(0 0 10px rgba(247,201,72,.8))}
+.s1{top:180px;left:92px;font-size:26px}
+.s2{top:1180px;right:110px;font-size:20px}
+.s3{top:1050px;left:70px;font-size:15px}
+</style>
+</head>
+<body>
+<div class="hero"><img src="../assets/tesla.jpg" alt=""></div>
+<div class="top"><div class="mark">⚡</div></div>
+<div class="star s1">✦</div><div class="star s2">✦</div><div class="star s3">✦</div>
+
+<div class="panel">
+  <div class="badge"><i></i>פעם ראשונה בישראל</div>
+  <h1>מישהו יזכה בטסלה<em>למה לא אתה?</em></h1>
+  <p class="lead"><b>טסלה + 9 פרסים</b> בהגרלה אחת.<br>מצטרפים בוואטסאפ — פחות מדקה.</p>
+  <div class="chips">
+    <span>🏛️ פרגולה</span><span>✈️ טיסה לאירופה</span><span>🛍️ שופינג</span><span>💇 פאה</span>
+  </div>
+  <div class="cta">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 15.2 4 13.6 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8.2-8 8.2z"/></svg>
+    להצטרפות בוואטסאפ
+  </div>
+  <div class="foot">
+    <div class="qrBox"><img src="qr-brand.png" alt="QR"></div>
+    <div class="t"><b>סורקים ומצטרפים</b>כל הפרסים וההסבר בדף<div class="url">neriaco555-del.github.io/tesla-giveaway</div></div>
+  </div>
+</div>
+</body>
+</html>
