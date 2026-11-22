@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הגרלת הטסלה — טסלה + 9 פרסים מטורפים</title>
+<meta name="description" content="פעם ראשונה בישראל: הגרלת הטסלה. טסלה, פרגולה, טיסה לאירופה, שופינג, פאה, עמדת טעינה ועוד. מצטרפים בהודעת וואטסאפ אחת.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="הגרלת הטסלה — זה קורה עכשיו">
+<meta property="og:description" content="טסלה + 9 פרסים. מצטרפים בלחיצה אחת בוואטסאפ.">
+<meta property="og:image" content="assets/tesla.jpg">
+<meta name="theme-color" content="#0b0210">
+<link rel="icon" href="assets/tesla.jpg">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800;900&family=Rubik:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0210;
+  --bg2:#150523;
+  --gold1:#fff3c4;
+  --gold2:#f7c948;
+  --gold3:#b07d1a;
+  --pink:#ff3ea5;
+  --violet:#8b2bff;
+  --txt:#f6eefc;
+  --muted:#b9a7c9;
+  --glass:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.10);
+  --wa:#25d366;
+  --r:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--txt);
+  font-family:"Heebo",system-ui,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(60vw 60vw at 85% -10%, rgba(139,43,255,.35), transparent 60%),
+    radial-gradient(50vw 50vw at 5% 10%, rgba(255,62,165,.22), transparent 60%),
+    radial-gradient(70vw 60vw at 50% 110%, rgba(247,201,72,.12), transparent 60%),
+    linear-gradient(180deg,#0a0210,#12041d 40%,#0a0210);
+}
+.noise{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+.progress{position:fixed;top:0;right:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--pink),var(--gold2));box-shadow:0 0 18px var(--gold2)}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;inset-inline:0;z-index:50;
+  backdrop-filter:blur(14px);background:rgba(10,2,16,.55);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Rubik";font-weight:900;letter-spacing:-.5px}
+.logo .mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#2a0b45,#12041d);border:1px solid rgba(247,201,72,.45);
+  color:var(--gold2);font-size:16px;box-shadow:0 0 24px rgba(247,201,72,.18)}
+.logo span{font-size:17px}
+.nav nav{display:none;gap:26px;font-size:14.5px;color:var(--muted)}
+.nav nav a{color:inherit;text-decoration:none;transition:.2s}
+.nav nav a:hover{color:var(--gold2)}
+@media(min-width:820px){.nav nav{display:flex}}
+
+/* ---------- buttons ---------- */
+.btn{
+  --pad:16px 28px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:var(--pad);border-radius:999px;font-weight:800;font-size:16px;
+  text-decoration:none;cursor:pointer;border:0;position:relative;overflow:hidden;
+  transition:transform .18s ease, box-shadow .25s ease;font-family:inherit;
+}
+.btn-wa{
+  background:linear-gradient(180deg,#2ee06f,#17a94b);color:#04220f;
+  box-shadow:0 10px 34px rgba(37,211,102,.35), inset 0 1px 0 rgba(255,255,255,.45);
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(37,211,102,.5)}
+.btn-wa svg{width:22px;height:22px;flex:none}
+.btn-wa::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 48%,transparent 66%);
+  transform:translateX(-120%);animation:sheen 3.6s ease-in-out infinite;
+}
+@keyframes sheen{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+.btn-ghost{
+  background:rgba(255,255,255,.04);color:var(--txt);border:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
+
+/* ---------- hero ---------- */
+.hero{max-width:1180px;margin:auto;padding:118px 20px 40px;
+  display:grid;grid-template-columns:1fr;gap:38px;align-items:center}
+@media(min-width:960px){.hero{grid-template-columns:1.06fr .94fr;padding-top:140px;gap:54px}}
+.badge{
+  display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;
+  font-size:13px;font-weight:700;color:#ffd9ec;
+  background:rgba(255,62,165,.10);border:1px solid rgba(255,62,165,.32);
+  box-shadow:0 0 0 4px rgba(255,62,165,.05);
+}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--pink);
+  box-shadow:0 0 0 0 rgba(255,62,165,.8);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(255,62,165,0)}100%{box-shadow:0 0 0 0 rgba(255,62,165,0)}}
+h1{
+  font-family:"Rubik";font-size:clamp(46px,11.5vw,104px);line-height:.93;
+  margin:20px 0 8px;font-weight:900;letter-spacing:-2px;
+  background:linear-gradient(180deg,var(--gold1) 4%,var(--gold2) 46%,var(--gold3) 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 14px 34px rgba(247,201,72,.22));
+}
+h1 .l2{display:block}
+.sub{font-size:clamp(16px,4.2vw,20px);color:#e7d9f3;line-height:1.65;margin:0 0 26px;max-width:52ch}
+.sub b{color:#fff}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.micro{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-top:14px}
+.micro svg{width:16px;height:16px;color:var(--wa)}
+.stats{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+.stat{flex:1 1 100px;padding:14px 16px;border-radius:16px;background:var(--glass);
+  border:1px solid var(--line);backdrop-filter:blur(10px)}
+.stat b{display:block;font-family:"Rubik";font-size:26px;line-height:1;
+  background:linear-gradient(180deg,#fff,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:12.5px;color:var(--muted)}
+
+/* hero visual */
+.visual{position:relative;perspective:1200px}
+.frame{
+  position:relative;border-radius:30px;overflow:hidden;
+  border:1px solid rgba(247,201,72,.28);
+  box-shadow:0 40px 90px -30px rgba(139,43,255,.65),0 0 0 1px rgba(255,255,255,.05) inset;
+  transform:rotate(-1.4deg);transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  background:#12041d;
+}
+.frame:hover{transform:rotate(0) scale(1.012)}
+.frame img{display:block;width:100%;height:auto}
+@media(min-width:960px){.frame img{max-height:76vh;object-fit:cover;object-position:center 8%}}
+.orb{position:absolute;width:62%;aspect-ratio:1;left:50%;top:38%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(255,62,165,.35),rgba(139,43,255,.22) 45%,transparent 70%);
+  filter:blur(46px);z-index:-1;animation:breathe 9s ease-in-out infinite;pointer-events:none}
+@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.18);opacity:.75}}
+.frame .glow{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 55%,rgba(10,2,16,.55))}
+.chip{
+  position:absolute;padding:9px 14px;border-radius:999px;font-size:12.5px;font-weight:800;
+  background:rgba(12,3,20,.72);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+.chip.a{top:14px;left:14px;color:#c9ffe0;border-color:rgba(37,211,102,.45)}
+.chip.b{bottom:16px;right:16px;color:#ffe6a8;border-color:rgba(247,201,72,.45)}
+.float{animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* ---------- marquee ---------- */
+.marquee{
+  margin:46px 0 0;border-block:1px solid rgba(255,255,255,.07);
+  background:linear-gradient(90deg,rgba(139,43,255,.14),rgba(255,62,165,.14),rgba(247,201,72,.12));
+  overflow:hidden;padding:13px 0;
+}
+.track{display:flex;gap:44px;width:max-content;animation:scroll 34s linear infinite;font-family:"Rubik";font-weight:800;font-size:14.5px;letter-spacing:.4px}
+.track span{display:flex;align-items:center;gap:12px;color:#f0e2ff;white-space:nowrap}
+.track i{color:var(--gold2);font-style:normal}
+@keyframes scroll{to{transform:translateX(50%)}}
+
+/* ---------- sections ---------- */
+section{max-width:1180px;margin:auto;padding:70px 20px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:2px;color:var(--gold2);text-transform:uppercase;margin:0 0 10px}
+h2{font-family:"Rubik";font-size:clamp(30px,6.6vw,48px);line-height:1.05;letter-spacing:-1px;margin:0 0 14px}
+h2 em{font-style:normal;background:linear-gradient(180deg,var(--gold1),var(--gold2) 55%,var(--gold3));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:16.5px;line-height:1.7;max-width:62ch;margin:0 0 34px}
+
+/* prizes */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(5,1fr)}}
+.card{
+  position:relative;padding:20px 16px 18px;border-radius:var(--r);
+  background:linear-gradient(165deg,rgba(255,255,255,.075),rgba(255,255,255,.02));
+  border:1px solid var(--line);overflow:hidden;
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s;
+}
+.card::before{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
+  background:linear-gradient(140deg,rgba(247,201,72,.55),transparent 40%,transparent 60%,rgba(255,62,165,.45));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:.3s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 24px 50px -22px rgba(139,43,255,.7)}
+.card:hover::before{opacity:1}
+.card .ico{font-size:26px;line-height:1;margin-bottom:12px;display:block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5))}
+.card h3{margin:0 0 5px;font-size:15.5px;font-weight:800;letter-spacing:-.2px}
+.card p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.5}
+.card.main{grid-column:span 2;background:linear-gradient(150deg,rgba(247,201,72,.16),rgba(255,62,165,.10) 55%,rgba(139,43,255,.14));border-color:rgba(247,201,72,.4)}
+@media(min-width:700px){.card.main{grid-column:span 1}}
+.card.main .tag{position:absolute;top:12px;left:12px;font-size:10px;font-weight:900;letter-spacing:1px;
+  padding:4px 9px;border-radius:999px;background:var(--gold2);color:#2a1a00}
+
+/* video */
+.videowrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+@media(min-width:880px){.videowrap{grid-template-columns:.85fr 1.15fr;gap:48px}}
+.phone{
+  position:relative;max-width:330px;margin:auto;border-radius:34px;padding:9px;
+  background:linear-gradient(160deg,#3a1560,#12041d 60%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 40px 80px -30px rgba(139,43,255,.8),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.phone video{display:block;width:100%;border-radius:26px;background:#000;aspect-ratio:478/850}
+.sound{position:absolute;top:20px;left:20px;z-index:2;font-size:12px;font-weight:800;
+  padding:7px 12px;border-radius:999px;color:#eafff2;background:rgba(10,2,16,.72);
+  border:1px solid rgba(37,211,102,.45);backdrop-filter:blur(8px);animation:pulseGreen 2.6s infinite;pointer-events:none}
+@keyframes pulseGreen{50%{box-shadow:0 0 0 6px rgba(37,211,102,.12)}}
+.hint{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;color:var(--muted);margin-top:12px}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:s}
+.steps li{
+  display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;
+  padding:18px;border-radius:18px;background:var(--glass);border:1px solid var(--line);
+}
+.steps .n{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
+  font-family:"Rubik";font-weight:900;font-size:19px;color:#2a1a00;
+  background:linear-gradient(160deg,var(--gold1),var(--gold2));box-shadow:0 8px 22px rgba(247,201,72,.3)}
+.steps h4{margin:2px 0 5px;font-size:16px}
+.steps p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:12px}
+.why div{padding:22px;border-radius:20px;background:var(--glass);border:1px solid var(--line)}
+.why h4{margin:0 0 6px;font-size:16px;color:#fff}
+.why p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+
+/* faq */
+.faq{max-width:820px;margin:auto;display:grid;gap:10px}
+details{
+  background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden;
+  transition:border-color .2s;
+}
+details[open]{border-color:rgba(247,201,72,.38);background:rgba(247,201,72,.05)}
+summary{
+  cursor:pointer;list-style:none;padding:17px 20px;font-weight:700;font-size:15.5px;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--gold2);transition:.25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0;padding:0 20px 18px;color:var(--muted);font-size:14px;line-height:1.7}
+
+/* final cta */
+.final{
+  position:relative;text-align:center;padding:64px 24px;border-radius:34px;overflow:hidden;
+  background:
+    radial-gradient(60% 90% at 50% 0%,rgba(255,62,165,.28),transparent 65%),
+    linear-gradient(180deg,rgba(139,43,255,.28),rgba(12,3,20,.5));
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 50px 100px -50px rgba(255,62,165,.6);
+}
+.final h2{margin-bottom:12px}
+.final .lead{margin:0 auto 26px}
+.final .big{font-size:18px;padding:19px 38px}
+
+/* share */
+.share{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.share button{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--txt);
+  font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;transition:.2s;
+}
+.share button:hover{background:rgba(255,255,255,.12)}
+.share svg{width:16px;height:16px}
+
+/* footer */
+footer{max-width:1180px;margin:auto;padding:40px 20px 120px;color:#8d7d9e;font-size:12.5px;line-height:1.8}
+footer .disc{border-top:1px solid rgba(255,255,255,.07);padding-top:22px}
+footer b{color:#b9a7c9}
+footer a{color:#b9a7c9}
+
+/* sticky mobile cta */
+.sticky{
+  position:fixed;bottom:0;inset-inline:0;z-index:55;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(10,2,16,0),rgba(10,2,16,.92) 35%);
+  display:flex;justify-content:center;
+  transform:translateY(120%);transition:transform .35s ease;
+}
+.sticky.show{transform:translateY(0)}
+.sticky .btn{width:100%;max-width:520px;--pad:15px 22px}
+@media(min-width:960px){.sticky{display:none}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+html:not(.js) .reveal{opacity:1;transform:none}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============ MOBILE LAYOUT ============ */
+html{scroll-padding-top:78px}
+@media(max-width:820px){
+  .hero{padding:92px 18px 26px;gap:26px;text-align:center}
+  .badge{margin:0 auto}
+  h1{font-size:clamp(40px,12.4vw,58px);letter-spacing:-1.6px;margin:16px 0 10px}
+  .sub{margin:0 auto 24px;font-size:16px;line-height:1.62;max-width:36ch}
+  .cta-row{flex-direction:column;align-items:stretch;gap:10px}
+  .cta-row .btn{width:100%;min-height:52px}
+  .micro{justify-content:center;margin-top:12px;font-size:12.5px}
+  .stats{gap:8px;margin-top:22px}
+  .stat{padding:12px 6px;text-align:center;border-radius:14px;flex:1 1 0;min-width:0}
+  .stat b{font-size:22px}
+  .stat span{display:block;margin-top:5px;font-size:10.5px;line-height:1.25}
+  .visual{margin-top:6px}
+  .frame{transform:none;border-radius:24px}
+  .frame:hover{transform:none}
+  section{padding:46px 18px}
+  h2{font-size:clamp(27px,8.4vw,38px);letter-spacing:-.8px}
+  .lead{font-size:15.5px;line-height:1.65;margin-bottom:24px}
+  .eyebrow{font-size:11.5px;letter-spacing:1.4px}
+  .grid{gap:10px}
+  .card{padding:16px 12px;border-radius:18px}
+  .card .ico{font-size:23px;margin-bottom:9px}
+  .card h3{font-size:14px;line-height:1.25}
+  .card p{font-size:11.5px;line-height:1.45}
+  .card.main p{font-size:12px}
+  .videowrap{gap:22px}
+  .phone{max-width:290px;padding:7px;border-radius:30px}
+  .steps li{padding:15px;grid-template-columns:42px 1fr;gap:12px}
+  .steps .n{width:42px;height:42px;border-radius:12px;font-size:17px}
+  .steps h4{font-size:15px}
+  .steps p{font-size:13px}
+  .why{gap:10px}
+  .why div{padding:17px;border-radius:16px}
+  .why h4{font-size:15px}
+  .why p{font-size:13px}
+  summary{padding:15px 16px;font-size:14.5px;gap:10px}
+  details p{padding:0 16px 16px;font-size:13.5px}
+  .final{padding:44px 20px;border-radius:26px}
+  .final .big{width:100%;--pad:17px 22px}
+  .share{gap:8px}
+  .share button{flex:1 1 auto;justify-content:center}
+  footer{padding:32px 18px 132px;font-size:12px}
+  .marquee{margin-top:34px}
+  .track{font-size:13px;gap:30px}
+}
+@media(max-width:560px){
+  .nav{padding:9px 13px;gap:10px}
+  .nav .btn{padding:9px 13px!important;font-size:12.5px!important;gap:7px}
+  .nav .btn svg{width:17px;height:17px}
+  .logo span{font-size:14.5px}
+  .logo .mark{width:31px;height:31px;border-radius:9px;font-size:14px}
+}
+@media(max-width:380px){
+  h1{font-size:38px}
+  .stat span{font-size:9.5px}
+}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="progress" id="bar"></div>
+
+<header>
+  <div class="nav">
+    <div class="logo"><div class="mark">⚡</div><span>הגרלת הטסלה</span></div>
+    <nav>
+      <a href="#prizes">הפרסים</a>
+      <a href="#how">איך משתתפים</a>
+      <a href="#video">הסרטון</a>
+      <a href="#faq">שאלות</a>
+    </nav>
+    <a class="btn btn-wa" style="--pad:10px 18px;font-size:14px" href="https://wa.me/972559899242?text=%D7%92%D7%9D%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%94%D7%98%D7%A1%D7%9C%D7%94%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A-972555655217-" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 15.2 4 13.6 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8.2-8 8.2z"/></svg>
+      להצטרפות
+    </a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="badge"><span class="dot"></span>פעם ראשונה בישראל</div>
+    <h1>הגרלת<span class="l2">הטסלה</span></h1>
+    <p class="sub">טסלה חדשה, פרגולה לחצר, טיסה לאירופה, שופינג, פאה, עמדת טעינה ועוד — <b>10 פרסים</b> בהגרלה אחת. מצטרפים בהודעת וואטסאפ אחת, בלי טפסים ובלי בירוקרטיה.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://wa.me/972559899242?text=%D7%92%D7%9D%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%94%D7%98%D7%A1%D7%9C%D7%94%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A-972555655217-" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 15.2 4 13.6 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8.2-8 8.2z"/></svg>
+        אני רוצה להשתתף
+      </a>
+      <a class="btn btn-ghost" href="#how">איך זה עובד?</a>
+    </div>
+    <div class="micro">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+      לוחצים, נפתחת הודעה מוכנה — רק לשלוח
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="10">0</b><span>פרסים בהגרלה</span></div>
+      <div class="stat"><b>1</b><span>טסלה חדשה</span></div>
+      <div class="stat"><b>0</b><span>טפסים למלא</span></div>
+    </div>
+  </div>
+
+  <div class="visual">
+    <div class="orb"></div>
+    <div class="frame">
+      <img src="assets/tesla.jpg" alt="הגרלת הטסלה — טסלה, פרגולה, טיסה לאירופה ועוד פרסים" width="900" height="1600" fetchpriority="high">
+      <div class="glow"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>🚗 טסלה חדשה</span><i>✦</i>
+    <span>🏛️ פרגולה לחצר</span><i>✦</i>
+    <span>✈️ טיסה לאירופה</span><i>✦</i>
+    <span>🛍️ שופינג בזארה</span><i>✦</i>
+    <span>🛒 קנייה בסופר</span><i>✦</i>
+    <span>💇 פאה של אסתי קוריץ</span><i>✦</i>
+    <span>🔌 עמדת טעינה</span><i>✦</i>
+    <span>⚖️ פגישה עם דוד וינטר</span><i>✦</i>
+    <span>💄 איפור קבוע</span><i>✦</i>
+    <span>💻 Claude Code לעיצלנים</span><i>✦</i>
+    <span>🚗 טסלה חדשה</span><i>✦</i>
+    <span>🏛️ פרגולה לחצר</span><i>✦</i>
+    <span>✈️ טיסה לאירופה</span><i>✦</i>
+    <span>🛍️ שופינג בזארה</span><i>✦</i>
+    <span>🛒 קנייה בסופר</span><i>✦</i>
+    <span>💇 פאה של אסתי קוריץ</span><i>✦</i>
+    <span>🔌 עמדת טעינה</span><i>✦</i>
+    <span>⚖️ פגישה עם דוד וינטר</span><i>✦</i>
+    <span>💄 איפור קבוע</span><i>✦</i>
+    <span>💻 Claude Code לעיצלנים</span><i>✦</i>
+  </div>
+</div>
+
+<!-- PRIZES -->
+<section id="prizes">
+  <div class="reveal">
+    <p class="eyebrow">הפרסים</p>
+    <h2>לא פרס אחד. <em>עשר סיבות</em> להצטרף.</h2>
+    <p class="lead">הפרס המרכזי הוא טסלה חדשה. אבל גם מי שלא זוכה בה לא יוצא בידיים ריקות — יש עוד תשעה פרסים שווים.</p>
+  </div>
+  <div class="grid">
+    <article class="card main reveal"><span class="tag">פרס ראשי</span><span class="ico">🚗</span><h3>טסלה חדשה</h3><p>הרכב המרכזי של ההגרלה — טסלה, אפס דלק, אפס רעש.</p></article>
+    <article class="card reveal"><span class="ico">🏛️</span><h3>פרגולה לחצר</h3><p>שטח מוצל ומעוצב לבית.</p></article>
+    <article class="card reveal"><span class="ico">✈️</span><h3>טיסה לאירופה</h3><p>כרטיס טיסה ליעד באירופה.</p></article>
+    <article class="card reveal"><span class="ico">🛍️</span><h3>שופינג בזארה</h3><p>מימון קניות ברשת זארה.</p></article>
+    <article class="card reveal"><span class="ico">🛒</span><h3>קנייה בסופר</h3><p>סל קניות מלא, עלינו.</p></article>
+    <article class="card reveal"><span class="ico">💇</span><h3>פאה של אסתי קוריץ</h3><p>פאה איכותית מבית ESTI K.</p></article>
+    <article class="card reveal"><span class="ico">🔌</span><h3>עמדת טעינה</h3><p>עמדת טעינה לרכב חשמלי בבית.</p></article>
+    <article class="card reveal"><span class="ico">⚖️</span><h3>פגישה עם דוד וינטר</h3><p>ייעוץ אישי, אחד על אחד.</p></article>
+    <article class="card reveal"><span class="ico">💄</span><h3>איפור קבוע</h3><p>טיפול איפור קבוע מקצועי.</p></article>
+    <article class="card reveal"><span class="ico">💻</span><h3>Claude Code לעיצלנים</h3><p>התוכנית שכולם מדברים עליה.</p></article>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="videowrap">
+    <div class="reveal">
+      <div class="phone">
+        <video src="assets/tesla-web.mp4" poster="assets/poster.jpg" controls playsinline preload="metadata"></video>
+        <div class="sound">🔊 עם סאונד</div>
+      </div>
+      <div class="hint">▶︎ לחצו להפעלה — הסרטון מתנגן עם קול</div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">הסרטון</p>
+      <h2>76 שניות שמסבירות <em>הכל</em>.</h2>
+      <p class="lead">מה הפרסים, איך מצטרפים, ומה קורה אחרי ששולחים את ההודעה. אם אין לך כוח לקרוא — פשוט תראה.</p>
+      <a class="btn btn-wa" href="https://wa.me/972559899242?text=%D7%92%D7%9D%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%94%D7%98%D7%A1%D7%9C%D7%94%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A-972555655217-" target="_blank" rel="noopener">אחרי הסרטון — להצטרפות</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="reveal">
+    <p class="eyebrow">איך משתתפים</p>
+    <h2>שלושה צעדים. <em>פחות מדקה.</em></h2>
+    <p class="lead">אין טופס, אין הרשמה, אין סיסמה. רק הודעת וואטסאפ אחת עם הטקסט המוכן.</p>
+  </div>
+  <ol class="steps">
+    <li class="reveal"><div class="n">1</div><div><h4>לוחצים על הכפתור</h4><p>נפתחת הודעה מוכנה מראש בוואטסאפ — עם שם הקמפיין וקוד ההפניה.</p></div></li>
+    <li class="reveal"><div class="n">2</div><div><h4>שולחים את ההודעה</h4><p>לא צריך לנסח כלום. פשוט שולחים. משם ממשיכים בשיחה עם צוות הקמפיין.</p></div></li>
+    <li class="reveal"><div class="n">3</div><div><h4>נכנסים להגרלה</h4><p>מקבלים אישור השתתפות, וממתינים למועד ההגרלה שמפרסם המפיק.</p></div></li>
+  </ol>
+  <div style="text-align:center;margin-top:26px">
+    <a class="btn btn-wa big" href="https://wa.me/972559899242?text=%D7%92%D7%9D%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%94%D7%98%D7%A1%D7%9C%D7%94%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A-972555655217-" target="_blank" rel="noopener">בואו נתחיל</a>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="reveal">
+    <p class="eyebrow">למה בכלל</p>
+    <h2>ההגרלה הכי <em>שווה</em> שראית</h2>
+  </div>
+  <div class="why">
+    <div class="reveal"><h4>10 פרסים, לא אחד</h4><p>סיכוי גבוה יותר לצאת עם משהו — גם אם זה לא הטסלה.</p></div>
+    <div class="reveal"><h4>בלי טפסים</h4><p>הודעת וואטסאפ אחת. זה כל מה שצריך.</p></div>
+    <div class="reveal"><h4>פרסים מהחיים</h4><p>פרגולה, סופר, פאה, איפור, טיסה — פרסים שבאמת משתמשים בהם.</p></div>
+    <div class="reveal"><h4>שקיפות</h4><p>כל הפרטים הרשמיים מגיעים מהמפיק בערוץ ההרשמה.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="reveal" style="text-align:center">
+    <p class="eyebrow">שאלות ותשובות</p>
+    <h2>כל מה שרצית <em>לדעת</em></h2>
+  </div>
+  <div class="faq">
+    <details class="reveal"><summary>מה הפרס הראשי?</summary><p>טסלה חדשה. בנוסף יש תשעה פרסים נוספים: פרגולה, טיסה לאירופה, שופינג בזארה, קנייה בסופר, פאה של אסתי קוריץ, עמדת טעינה, פגישה עם דוד וינטר, איפור קבוע ותוכנית Claude Code לעיצלנים.</p></details>
+    <details class="reveal"><summary>איך נרשמים?</summary><p>לוחצים על כפתור ההצטרפות. נפתחת הודעת וואטסאפ עם טקסט מוכן — שולחים אותה, וזהו.</p></details>
+    <details class="reveal"><summary>צריך לשלם כדי להשתתף?</summary><p>תנאי ההשתתפות, כולל כל עלות אם קיימת, נמסרים בהודעת הוואטסאפ על ידי צוות הקמפיין. אל תשלם לשום גורם שאינו מפיק הקמפיין.</p></details>
+    <details class="reveal"><summary>מתי ההגרלה ומתי מכריזים על הזוכה?</summary><p>המועד נקבע על ידי מפיק הקמפיין ומפורסם בערוץ ההרשמה. בעמוד הזה לא מופיע תאריך רשמי כדי לא להטעות.</p></details>
+    <details class="reveal"><summary>איך אדע אם זכיתי?</summary><p>המפיק או צוות הקמפיין ייצרו איתך קשר דרך מספר הטלפון שממנו שלחת את ההודעה. אל תמסור פרטי אשראי לאף גורם.</p></details>
+    <details class="reveal"><summary>זה בטוח?</summary><p>ההשתתפות מתבצעת מול המפיק בלבד, בוואטסאפ. לא נדרשים סיסמאות, קוד PIN או פרטי אשראי. אם מישהו מבקש את אלה — זה לא הקמפיין.</p></details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section>
+  <div class="final reveal">
+    <p class="eyebrow">הרגע שלך</p>
+    <h2>מישהו יזכה בטסלה.<br><em>למה לא אתה?</em></h2>
+    <p class="lead">הודעה אחת. דקה אחת. עשרה פרסים שמחכים.</p>
+    <a class="btn btn-wa big" href="https://wa.me/972559899242?text=%D7%92%D7%9D%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%94%D7%98%D7%A1%D7%9C%D7%94%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A-972555655217-" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 15.2 4 13.6 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8.2-8 8.2z"/></svg>
+      אני מצטרף להגרלה
+    </a>
+    <div class="share">
+      <button id="shareBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        שתף עם חבר
+      </button>
+      <button id="copyBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+        העתק קישור
+      </button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="disc">
+    <p><b>הבהרה:</b> זהו דף שיתוף מטעם משתתף בקמפיין ואינו האתר הרשמי של ההגרלה. אין באמור התחייבות לזכייה, ואין בו מצג של קשר רשמי עם טסלה או עם המותגים המופיעים בו. כל הפרטים המחייבים — תקנון, תנאי השתתפות, תאריך ההגרלה, היתר ההגרלה ואופן חלוקת הפרסים — נמסרים על ידי מפיק הקמפיין.</p>
+    <p>הגרלות ומבצעי פרסים בישראל כפופים לדין (ובכלל זה חוק הגרלות ומשחקים אסורים והנחיות הרשות להגנת הצרכן) ועשויים לחייב היתר או רישום. יש לוודא מול המפיק שהוא פועל כדין. אין למסור לאף גורם פרטי אשראי, סיסמאות או קודי אימות.</p>
+    <p style="opacity:.7">© <span id="yr"></span> · דף קמפיין עצמאי · <a href="https://wa.me/972559899242" target="_blank" rel="noopener">יצירת קשר בוואטסאפ</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn-wa" href="https://wa.me/972559899242?text=%D7%92%D7%9D%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%94%D7%98%D7%A1%D7%9C%D7%94%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A-972555655217-" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 15.2 4 13.6 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8.2-8 8.2z"/></svg>
+    להצטרפות להגרלה — בוואטסאפ
+  </a>
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* scroll progress + sticky */
+const bar = document.getElementById('bar');
+const sticky = document.getElementById('sticky');
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+  bar.style.width = (p*100) + '%';
+  sticky.classList.toggle('show', h.scrollTop > 520);
+}
+addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* reveal */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* fail-safe: reveal what is already in view (deep links, hash jumps, older browsers) */
+function revealInView(){
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>{
+    const r = el.getBoundingClientRect();
+    if(r.top < innerHeight * 0.95 && r.bottom > 0) el.classList.add('in');
+  });
+}
+revealInView();
+addEventListener('load', revealInView);
+addEventListener('hashchange', ()=>setTimeout(revealInView, 60));
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}
+
+/* counter */
+const counters = document.querySelectorAll('[data-count]');
+const cio = new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target, to = +el.dataset.count; let n = 0;
+    const t = setInterval(()=>{ n++; el.textContent = n; if(n>=to) clearInterval(t); }, 90);
+    cio.unobserve(el);
+  });
+});
+counters.forEach(c=>cio.observe(c));
+
+/* share */
+const SHARE_TEXT = 'הגרלת הטסלה — טסלה + 9 פרסים. מצטרפים בוואטסאפ בקליק:';
+async function share(){
+  const url = location.href;
+  if(navigator.share){
+    try{ await navigator.share({title:'הגרלת הטסלה', text:SHARE_TEXT, url}); return; }catch(e){}
+  }
+  copy(url);
+}
+async function copy(text){
+  try{ await navigator.clipboard.writeText(text); toast('הקישור הועתק ✓'); }
+  catch(e){ prompt('העתק את הקישור:', text); }
+}
+document.getElementById('shareBtn').addEventListener('click', share);
+document.getElementById('copyBtn').addEventListener('click', ()=>copy(location.href));
+
+function toast(msg){
+  let t = document.getElementById('toast');
+  if(!t){
+    t = document.createElement('div');
+    t.id='toast';
+    t.style.cssText='position:fixed;bottom:92px;left:50%;transform:translateX(-50%) translateY(20px);opacity:0;background:#25d366;color:#04220f;font-weight:800;padding:12px 22px;border-radius:999px;z-index:70;transition:.3s;font-size:14px';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  requestAnimationFrame(()=>{ t.style.opacity=1; t.style.transform='translateX(-50%) translateY(0)'; });
+  clearTimeout(t._t);
+  t._t = setTimeout(()=>{ t.style.opacity=0; t.style.transform='translateX(-50%) translateY(20px)'; }, 2200);
+}
+
+/* pause video when out of view (saves battery/data) */
+const vid = document.querySelector('video');
+const vio = new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(!e.isIntersecting && !vid.paused) vid.pause(); });
+},{threshold:0});
+vio.observe(vid);
+</script>
+</body>
+</html>
